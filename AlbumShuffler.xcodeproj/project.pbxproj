@@ -1,0 +1,1026 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A0001000000000000000001 /* AlbumShufflerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000001 /* AlbumShufflerApp.swift */; };
+		2A0001000000000000000002 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000002 /* PlaybackMode.swift */; };
+		2A0001000000000000000003 /* SourceSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000003 /* SourceSelection.swift */; };
+		2A0001000000000000000004 /* MusicKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000004 /* MusicKitService.swift */; };
+		2A0001000000000000000005 /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000005 /* MusicPlayerViewModel.swift */; };
+		2A0001000000000000000006 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000006 /* AuthorizationView.swift */; };
+		2A0001000000000000000007 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000007 /* ContentView.swift */; };
+		2A0001000000000000000008 /* NowPlayingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000008 /* NowPlayingFooter.swift */; };
+		2A0001000000000000000009 /* ShuffleControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000009 /* ShuffleControlsView.swift */; };
+		2A000100000000000000000A /* ShuffleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000A /* ShuffleIntent.swift */; };
+		2A000100000000000000000B /* AlbumShufflerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000B /* AlbumShufflerWidget.swift */; };
+		2A0001000000000000000020 /* AlbumShufflerWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000021 /* AlbumShufflerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0001000000000000000031 /* AlbumShufflerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000001 /* AlbumShufflerApp.swift */; };
+		2A0001000000000000000032 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000002 /* PlaybackMode.swift */; };
+		2A0001000000000000000033 /* SourceSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000003 /* SourceSelection.swift */; };
+		2A0001000000000000000034 /* MusicKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000004 /* MusicKitService.swift */; };
+		2A0001000000000000000035 /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000005 /* MusicPlayerViewModel.swift */; };
+		2A0001000000000000000036 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000006 /* AuthorizationView.swift */; };
+		2A0001000000000000000037 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000007 /* ContentView.swift */; };
+		2A0001000000000000000038 /* NowPlayingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000008 /* NowPlayingFooter.swift */; };
+		2A0001000000000000000039 /* ShuffleControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000009 /* ShuffleControlsView.swift */; };
+		2A0001000000000000000040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000040 /* Assets.xcassets */; };
+		2A0001000000000000000041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000041 /* Assets.xcassets */; };
+		2A0001000000000000000042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000042 /* Assets.xcassets */; };
+		2A0001000000000000000050 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000050 /* WatchBridge.swift */; };
+		2A0001000000000000000051 /* AlbumShufflerWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000051 /* AlbumShufflerWatchApp.swift */; };
+		2A0001000000000000000052 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000052 /* WatchContentView.swift */; };
+		2A0001000000000000000053 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000053 /* WatchBridge.swift */; };
+		2A0001000000000000000054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000054 /* Assets.xcassets */; };
+		2A0001000000000000000056 /* AlbumShufflerWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000056 /* AlbumShufflerWatchWidget.swift */; };
+		2A0001000000000000000070 /* AlbumShufflerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000070 /* AlbumShufflerWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0001000000000000000071 /* AlbumShufflerWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000071 /* AlbumShufflerWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA0001000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0001000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A0001000000000000000002;
+			remoteInfo = AlbumShufflerWidget;
+		};
+		CA0001000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0001000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A0001000000000000000004;
+			remoteInfo = AlbumShufflerWatch;
+		};
+		CA0001000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A0001000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A0001000000000000000005;
+			remoteInfo = AlbumShufflerWatchWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A0001000000000000000004 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A0001000000000000000020 /* AlbumShufflerWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A0001000000000000000071 /* AlbumShufflerWatchWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000012 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2A0001000000000000000070 /* AlbumShufflerWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A0001000000000000000001 /* AlbumShufflerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShufflerApp.swift; sourceTree = "<group>"; };
+		1A0001000000000000000002 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
+		1A0001000000000000000003 /* SourceSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceSelection.swift; sourceTree = "<group>"; };
+		1A0001000000000000000004 /* MusicKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitService.swift; sourceTree = "<group>"; };
+		1A0001000000000000000005 /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
+		1A0001000000000000000006 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		1A0001000000000000000007 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A0001000000000000000008 /* NowPlayingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFooter.swift; sourceTree = "<group>"; };
+		1A0001000000000000000009 /* ShuffleControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleControlsView.swift; sourceTree = "<group>"; };
+		1A000100000000000000000A /* ShuffleIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleIntent.swift; sourceTree = "<group>"; };
+		1A000100000000000000000B /* AlbumShufflerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShufflerWidget.swift; sourceTree = "<group>"; };
+		1A0001000000000000000010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0001000000000000000011 /* AlbumShuffler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumShuffler.entitlements; sourceTree = "<group>"; };
+		1A0001000000000000000012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0001000000000000000013 /* AlbumShufflerWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumShufflerWidget.entitlements; sourceTree = "<group>"; };
+		1A0001000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0001000000000000000020 /* AlbumShuffler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumShuffler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0001000000000000000021 /* AlbumShufflerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbumShufflerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0001000000000000000022 /* AlbumShufflerTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumShufflerTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0001000000000000000040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A0001000000000000000041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A0001000000000000000042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A0001000000000000000050 /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
+		1A0001000000000000000051 /* AlbumShufflerWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShufflerWatchApp.swift; sourceTree = "<group>"; };
+		1A0001000000000000000052 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		1A0001000000000000000053 /* WatchBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBridge.swift; sourceTree = "<group>"; };
+		1A0001000000000000000054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A0001000000000000000055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0001000000000000000056 /* AlbumShufflerWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShufflerWatchWidget.swift; sourceTree = "<group>"; };
+		1A0001000000000000000057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0001000000000000000058 /* AlbumShufflerWatchWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumShufflerWatchWidget.entitlements; sourceTree = "<group>"; };
+		1A0001000000000000000059 /* AlbumShufflerWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumShufflerWatch.entitlements; sourceTree = "<group>"; };
+		1A0001000000000000000070 /* AlbumShufflerWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumShufflerWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0001000000000000000071 /* AlbumShufflerWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbumShufflerWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A0001000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A0001000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				3A0001000000000000000002 /* AlbumShuffler */,
+				3A0001000000000000000007 /* AlbumShufflerWidget */,
+				3A0001000000000000000009 /* AlbumShufflerTV */,
+				3A000100000000000000000A /* AlbumShufflerWatch */,
+				3A000100000000000000000B /* AlbumShufflerWatchWidget */,
+				3A0001000000000000000008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000002 /* AlbumShuffler */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000001 /* AlbumShufflerApp.swift */,
+				3A0001000000000000000003 /* Models */,
+				3A0001000000000000000004 /* Services */,
+				3A0001000000000000000005 /* ViewModels */,
+				3A0001000000000000000006 /* Views */,
+				1A0001000000000000000040 /* Assets.xcassets */,
+				1A0001000000000000000010 /* Info.plist */,
+				1A0001000000000000000011 /* AlbumShuffler.entitlements */,
+			);
+			path = AlbumShuffler;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000002 /* PlaybackMode.swift */,
+				1A0001000000000000000003 /* SourceSelection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000004 /* MusicKitService.swift */,
+				1A0001000000000000000050 /* WatchBridge.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000005 /* MusicPlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000006 /* AuthorizationView.swift */,
+				1A0001000000000000000007 /* ContentView.swift */,
+				1A0001000000000000000008 /* NowPlayingFooter.swift */,
+				1A0001000000000000000009 /* ShuffleControlsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000007 /* AlbumShufflerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1A000100000000000000000A /* ShuffleIntent.swift */,
+				1A000100000000000000000B /* AlbumShufflerWidget.swift */,
+				1A0001000000000000000041 /* Assets.xcassets */,
+				1A0001000000000000000012 /* Info.plist */,
+				1A0001000000000000000013 /* AlbumShufflerWidget.entitlements */,
+			);
+			path = AlbumShufflerWidget;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000020 /* AlbumShuffler.app */,
+				1A0001000000000000000021 /* AlbumShufflerWidget.appex */,
+				1A0001000000000000000022 /* AlbumShufflerTV.app */,
+				1A0001000000000000000070 /* AlbumShufflerWatch.app */,
+				1A0001000000000000000071 /* AlbumShufflerWatchWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A0001000000000000000009 /* AlbumShufflerTV */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000042 /* Assets.xcassets */,
+				1A0001000000000000000014 /* Info.plist */,
+			);
+			path = AlbumShufflerTV;
+			sourceTree = "<group>";
+		};
+		3A000100000000000000000A /* AlbumShufflerWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000051 /* AlbumShufflerWatchApp.swift */,
+				1A0001000000000000000052 /* WatchContentView.swift */,
+				1A0001000000000000000053 /* WatchBridge.swift */,
+				1A0001000000000000000054 /* Assets.xcassets */,
+				1A0001000000000000000055 /* Info.plist */,
+				1A0001000000000000000059 /* AlbumShufflerWatch.entitlements */,
+			);
+			path = AlbumShufflerWatch;
+			sourceTree = "<group>";
+		};
+		3A000100000000000000000B /* AlbumShufflerWatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1A0001000000000000000056 /* AlbumShufflerWatchWidget.swift */,
+				1A0001000000000000000057 /* Info.plist */,
+				1A0001000000000000000058 /* AlbumShufflerWatchWidget.entitlements */,
+			);
+			path = AlbumShufflerWatchWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A0001000000000000000001 /* AlbumShuffler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0001000000000000000002 /* Build configuration list for PBXNativeTarget "AlbumShuffler" */;
+			buildPhases = (
+				4A0001000000000000000001 /* Sources */,
+				4A0001000000000000000002 /* Frameworks */,
+				4A0001000000000000000003 /* Resources */,
+				4A0001000000000000000004 /* Embed Foundation Extensions */,
+				4A0001000000000000000012 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA0001000000000000000001 /* PBXTargetDependency */,
+				BA0001000000000000000002 /* PBXTargetDependency */,
+			);
+			name = AlbumShuffler;
+			productName = AlbumShuffler;
+			productReference = 1A0001000000000000000020 /* AlbumShuffler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A0001000000000000000002 /* AlbumShufflerWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0001000000000000000003 /* Build configuration list for PBXNativeTarget "AlbumShufflerWidget" */;
+			buildPhases = (
+				4A0001000000000000000005 /* Sources */,
+				4A0001000000000000000006 /* Frameworks */,
+				4A0001000000000000000007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbumShufflerWidget;
+			productName = AlbumShufflerWidget;
+			productReference = 1A0001000000000000000021 /* AlbumShufflerWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		7A0001000000000000000003 /* AlbumShufflerTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0001000000000000000004 /* Build configuration list for PBXNativeTarget "AlbumShufflerTV" */;
+			buildPhases = (
+				4A0001000000000000000008 /* Sources */,
+				4A0001000000000000000009 /* Frameworks */,
+				4A000100000000000000000A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbumShufflerTV;
+			productName = AlbumShufflerTV;
+			productReference = 1A0001000000000000000022 /* AlbumShufflerTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A0001000000000000000004 /* AlbumShufflerWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0001000000000000000005 /* Build configuration list for PBXNativeTarget "AlbumShufflerWatch" */;
+			buildPhases = (
+				4A000100000000000000000B /* Sources */,
+				4A000100000000000000000C /* Frameworks */,
+				4A000100000000000000000D /* Resources */,
+				4A000100000000000000000E /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA0001000000000000000003 /* PBXTargetDependency */,
+			);
+			name = AlbumShufflerWatch;
+			productName = AlbumShufflerWatch;
+			productReference = 1A0001000000000000000070 /* AlbumShufflerWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A0001000000000000000005 /* AlbumShufflerWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0001000000000000000006 /* Build configuration list for PBXNativeTarget "AlbumShufflerWatchWidget" */;
+			buildPhases = (
+				4A000100000000000000000F /* Sources */,
+				4A0001000000000000000010 /* Frameworks */,
+				4A0001000000000000000011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbumShufflerWatchWidget;
+			productName = AlbumShufflerWatchWidget;
+			productReference = 1A0001000000000000000071 /* AlbumShufflerWatchWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A0001000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					7A0001000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					7A0001000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					7A0001000000000000000003 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					7A0001000000000000000004 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					7A0001000000000000000005 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 6A0001000000000000000001 /* Build configuration list for PBXProject "AlbumShuffler" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A0001000000000000000001;
+			productRefGroup = 3A0001000000000000000008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A0001000000000000000001 /* AlbumShuffler */,
+				7A0001000000000000000002 /* AlbumShufflerWidget */,
+				7A0001000000000000000003 /* AlbumShufflerTV */,
+				7A0001000000000000000004 /* AlbumShufflerWatch */,
+				7A0001000000000000000005 /* AlbumShufflerWatchWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A0001000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000040 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000041 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000042 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000054 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A0001000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000001 /* AlbumShufflerApp.swift in Sources */,
+				2A0001000000000000000002 /* PlaybackMode.swift in Sources */,
+				2A0001000000000000000003 /* SourceSelection.swift in Sources */,
+				2A0001000000000000000004 /* MusicKitService.swift in Sources */,
+				2A0001000000000000000005 /* MusicPlayerViewModel.swift in Sources */,
+				2A0001000000000000000006 /* AuthorizationView.swift in Sources */,
+				2A0001000000000000000007 /* ContentView.swift in Sources */,
+				2A0001000000000000000008 /* NowPlayingFooter.swift in Sources */,
+				2A0001000000000000000009 /* ShuffleControlsView.swift in Sources */,
+				2A0001000000000000000050 /* WatchBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A000100000000000000000A /* ShuffleIntent.swift in Sources */,
+				2A000100000000000000000B /* AlbumShufflerWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A0001000000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000031 /* AlbumShufflerApp.swift in Sources */,
+				2A0001000000000000000032 /* PlaybackMode.swift in Sources */,
+				2A0001000000000000000033 /* SourceSelection.swift in Sources */,
+				2A0001000000000000000034 /* MusicKitService.swift in Sources */,
+				2A0001000000000000000035 /* MusicPlayerViewModel.swift in Sources */,
+				2A0001000000000000000036 /* AuthorizationView.swift in Sources */,
+				2A0001000000000000000037 /* ContentView.swift in Sources */,
+				2A0001000000000000000038 /* NowPlayingFooter.swift in Sources */,
+				2A0001000000000000000039 /* ShuffleControlsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000051 /* AlbumShufflerWatchApp.swift in Sources */,
+				2A0001000000000000000052 /* WatchContentView.swift in Sources */,
+				2A0001000000000000000053 /* WatchBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A000100000000000000000F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0001000000000000000056 /* AlbumShufflerWatchWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA0001000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A0001000000000000000002 /* AlbumShufflerWidget */;
+			targetProxy = CA0001000000000000000001 /* PBXContainerItemProxy */;
+		};
+		BA0001000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A0001000000000000000004 /* AlbumShufflerWatch */;
+			targetProxy = CA0001000000000000000002 /* PBXContainerItemProxy */;
+		};
+		BA0001000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A0001000000000000000005 /* AlbumShufflerWatchWidget */;
+			targetProxy = CA0001000000000000000003 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5A0001000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		5A0001000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A0001000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShuffler/AlbumShuffler.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShuffler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A0001000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShuffler/AlbumShuffler.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShuffler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A0001000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWidget/AlbumShufflerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A0001000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWidget/AlbumShufflerWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A0001000000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		5A0001000000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		5A0001000000000000000009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWatch/AlbumShufflerWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5A000100000000000000000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWatch/AlbumShufflerWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		5A000100000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWatchWidget/AlbumShufflerWatchWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.watchkitapp.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5A000100000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AlbumShufflerWatchWidget/AlbumShufflerWatchWidget.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2T9LB27UWT;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = AlbumShufflerWatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albumshuffler.app.watchkitapp.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A0001000000000000000001 /* Build configuration list for PBXProject "AlbumShuffler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0001000000000000000001 /* Debug */,
+				5A0001000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0001000000000000000002 /* Build configuration list for PBXNativeTarget "AlbumShuffler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0001000000000000000003 /* Debug */,
+				5A0001000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0001000000000000000003 /* Build configuration list for PBXNativeTarget "AlbumShufflerWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0001000000000000000005 /* Debug */,
+				5A0001000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0001000000000000000004 /* Build configuration list for PBXNativeTarget "AlbumShufflerTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0001000000000000000007 /* Debug */,
+				5A0001000000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0001000000000000000005 /* Build configuration list for PBXNativeTarget "AlbumShufflerWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0001000000000000000009 /* Debug */,
+				5A000100000000000000000A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A0001000000000000000006 /* Build configuration list for PBXNativeTarget "AlbumShufflerWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A000100000000000000000B /* Debug */,
+				5A000100000000000000000C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A0001000000000000000001 /* Project object */;
+}

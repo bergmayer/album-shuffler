@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+
+# Xcode user state (per-user, not committed)
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Build products
+build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+Package.pins
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Editors
+*.swp
+*~
+.vscode/
+.idea/
+
+# Provisioning profiles & signing certs (never commit)
+*.mobileprovision
+*.cer
+*.p12
+*.p8
