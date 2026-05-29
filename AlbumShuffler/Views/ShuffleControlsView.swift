@@ -34,6 +34,12 @@ struct ShuffleControlsView: View {
                     }
                 }
             } label: {
+                #if os(tvOS)
+                // Let the system focus pill carry all the chrome — drawing our
+                // own background inside it produces a nested shape.
+                Label(viewModel.source.displayName,
+                      systemImage: viewModel.source.isPlaylist ? "music.note.list" : "music.note.house")
+                #else
                 HStack {
                     Image(systemName: viewModel.source.isPlaylist ? "music.note.list" : "music.note.house")
                     Text(viewModel.source.displayName)
@@ -49,6 +55,7 @@ struct ShuffleControlsView: View {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(.quaternary)
                 )
+                #endif
             }
 
             if viewModel.isLoadingPlaylists {

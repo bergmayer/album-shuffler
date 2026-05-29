@@ -18,7 +18,7 @@ enum PlaybackMode: String, CaseIterable, Identifiable, Hashable {
         case .subset:
             return "Plays only the album tracks that exist in the chosen playlist, in album order."
         case .complete:
-            return "Plays the entire catalog album, filling in any tracks missing from your library."
+            return "Plays the entire album a random track is from."
         }
     }
 

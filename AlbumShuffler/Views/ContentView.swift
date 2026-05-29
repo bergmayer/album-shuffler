@@ -35,6 +35,7 @@ struct ContentView: View {
         HStack(alignment: .top, spacing: 80) {
             ShuffleControlsView()
                 .frame(maxWidth: .infinity, alignment: .leading)
+
             NowPlayingTVPanel()
                 .frame(maxWidth: .infinity)
         }
@@ -75,8 +76,13 @@ struct ContentView: View {
               comps.host == "shuffle" else { return }
 
         // Widgets do not pass parameters — they always replay the user's
-        // current in-app source and mode.
-        Task { await viewModel.playRandomAlbum() }
+        // current in-app source and mode. Await bootstrap so a cold-launch
+        // deep link doesn't fire `playRandomAlbum()` before the persisted
+        // source has been restored from UserDefaults.
+        Task {
+            await viewModel.bootstrap()
+            await viewModel.playRandomAlbum()
+        }
     }
 }
 
