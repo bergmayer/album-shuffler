@@ -34,6 +34,6 @@
     <key>WKApplication</key>
     <true/>
     <key>WKCompanionAppBundleIdentifier</key>
-    <string>com.albumshuffler.app</string>
+    <string>com.palefire.albumshuffler</string>
 </dict>
 </plist>
