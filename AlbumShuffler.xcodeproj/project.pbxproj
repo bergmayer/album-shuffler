@@ -18,7 +18,7 @@
 		2A0001000000000000000009 /* ShuffleControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000009 /* ShuffleControlsView.swift */; };
 		2A000100000000000000000A /* ShuffleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000A /* ShuffleIntent.swift */; };
 		2A000100000000000000000B /* AlbumShufflerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000B /* AlbumShufflerWidget.swift */; };
-		2A0001000000000000000020 /* AlbumShufflerWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000021 /* AlbumShufflerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0001000000000000000020 /* AlbumShufflerWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000021 /* AlbumShufflerWidget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A0001000000000000000031 /* AlbumShufflerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000001 /* AlbumShufflerApp.swift */; };
 		2A0001000000000000000032 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000002 /* PlaybackMode.swift */; };
 		2A0001000000000000000033 /* SourceSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000003 /* SourceSelection.swift */; };
@@ -37,7 +37,7 @@
 		2A0001000000000000000053 /* WatchBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000053 /* WatchBridge.swift */; };
 		2A0001000000000000000054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000054 /* Assets.xcassets */; };
 		2A0001000000000000000056 /* AlbumShufflerWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000056 /* AlbumShufflerWatchWidget.swift */; };
-		2A0001000000000000000070 /* AlbumShufflerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000070 /* AlbumShufflerWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A0001000000000000000070 /* AlbumShufflerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000070 /* AlbumShufflerWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A0001000000000000000071 /* AlbumShufflerWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000071 /* AlbumShufflerWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -548,11 +548,13 @@
 /* Begin PBXTargetDependency section */
 		BA0001000000000000000001 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 7A0001000000000000000002 /* AlbumShufflerWidget */;
 			targetProxy = CA0001000000000000000001 /* PBXContainerItemProxy */;
 		};
 		BA0001000000000000000002 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 7A0001000000000000000004 /* AlbumShufflerWatch */;
 			targetProxy = CA0001000000000000000002 /* PBXContainerItemProxy */;
 		};

@@ -8,7 +8,7 @@ struct ShuffleControlsView: View {
         VStack(alignment: .leading, spacing: 24) {
             sourceSection
             modeSection
-            playButton
+            playSection
         }
     }
 
@@ -114,26 +114,60 @@ struct ShuffleControlsView: View {
 
     // MARK: - Play
 
+    private var playSection: some View {
+        VStack(spacing: 10) {
+            playButton
+            chooseAnotherButton
+        }
+        .tint(.blue)
+    }
+
     private var playButton: some View {
         Button {
             Task { await viewModel.playRandomAlbum() }
         } label: {
-            HStack {
-                if viewModel.isShuffling {
-                    ProgressView().controlSize(.small)
-                } else {
-                    Image(systemName: "play.circle.fill")
-                        .font(.title2)
-                }
-                Text(viewModel.isShuffling ? "Working…" : "Play random album")
-                    .font(.headline)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 14)
+            shuffleButtonLabel(
+                viewModel.isShuffling ? "Working…" : "Play random album",
+                systemImage: "play.fill"
+            )
         }
         .buttonStyle(.borderedProminent)
         .controlSize(.large)
         .disabled(!viewModel.canShuffle)
+    }
+
+    private var chooseAnotherButton: some View {
+        Button {
+            Task { await viewModel.playRandomAlbum() }
+        } label: {
+            shuffleButtonLabel(
+                "Choose another",
+                systemImage: "shuffle",
+                showsProgress: false
+            )
+        }
+        .buttonStyle(.borderedProminent)
+        .controlSize(.large)
+        .disabled(viewModel.nowPlayingTitle == nil || !viewModel.canShuffle)
+        .accessibilityLabel("Choose another album")
+    }
+
+    private func shuffleButtonLabel(
+        _ title: String,
+        systemImage: String,
+        showsProgress: Bool = true
+    ) -> some View {
+        HStack(spacing: 8) {
+            if viewModel.isShuffling && showsProgress {
+                ProgressView()
+                    .controlSize(.small)
+            } else {
+                Image(systemName: systemImage)
+            }
+            Text(title)
+        }
+        .font(.headline)
+        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Helpers

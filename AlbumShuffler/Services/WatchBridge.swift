@@ -1,4 +1,5 @@
 import Foundation
+#if canImport(WatchConnectivity)
 import WatchConnectivity
 
 /// Listens for "shuffle" messages sent from the Apple Watch and forwards them
@@ -48,3 +49,4 @@ extension WatchBridge: WCSessionDelegate {
         }
     }
 }
+#endif

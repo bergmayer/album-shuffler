@@ -2,6 +2,8 @@ import SwiftUI
 import MusicKit
 #if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
 #endif
 
 // MARK: - Shared helpers
@@ -12,11 +14,17 @@ private func openMusicApp() {
     // the Music app.
     guard let first = URL(string: "music://nowplaying"),
           let fallback = URL(string: "music://") else { return }
+    #if canImport(UIKit)
     UIApplication.shared.open(first, options: [:]) { success in
         if !success {
             UIApplication.shared.open(fallback)
         }
     }
+    #elseif canImport(AppKit)
+    if !NSWorkspace.shared.open(first) {
+        NSWorkspace.shared.open(fallback)
+    }
+    #endif
 }
 
 private func nowPlayingSubtitle(artist: String?, album: String?) -> String {

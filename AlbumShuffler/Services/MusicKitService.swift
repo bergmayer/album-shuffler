@@ -106,9 +106,15 @@ struct MusicKitService {
             var lastAlbum: Album?
             for _ in 0..<8 {
                 let track = try await randomLibraryTrack()
-                let album = try await resolveCatalogAlbum(for: track)
-                if !excluding.contains(album.id.rawValue) { return album }
-                lastAlbum = album
+                do {
+                    let album = try await resolveCatalogAlbum(for: track)
+                    if !excluding.contains(album.id.rawValue) { return album }
+                    lastAlbum = album
+                } catch MusicKitServiceError.catalogLookupFailed {
+                    continue
+                } catch MusicKitServiceError.missingAlbumMetadata {
+                    continue
+                }
             }
             if let lastAlbum { return lastAlbum }
             throw MusicKitServiceError.catalogLookupFailed
@@ -133,9 +139,15 @@ struct MusicKitService {
             var lastAlbum: Album?
             for key in seen.keys.shuffled() {
                 guard let seed = seen[key] else { continue }
-                let album = try await resolveCatalogAlbum(for: seed)
-                if !excluding.contains(album.id.rawValue) { return album }
-                lastAlbum = album
+                do {
+                    let album = try await resolveCatalogAlbum(for: seed)
+                    if !excluding.contains(album.id.rawValue) { return album }
+                    lastAlbum = album
+                } catch MusicKitServiceError.catalogLookupFailed {
+                    continue
+                } catch MusicKitServiceError.missingAlbumMetadata {
+                    continue
+                }
             }
             if let lastAlbum { return lastAlbum }
             throw MusicKitServiceError.catalogLookupFailed
