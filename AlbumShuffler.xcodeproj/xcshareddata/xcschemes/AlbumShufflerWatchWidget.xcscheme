@@ -112,7 +112,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A0001000000000000000005"
             BuildableName = "AlbumShufflerWatchWidget.appex"
-            BlueprintName = "AlbumShufflerWatchWidget"
             ReferencedContainer = "container:AlbumShuffler.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

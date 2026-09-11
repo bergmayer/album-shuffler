@@ -1,0 +1,10 @@
+.gradle/
+.kotlin/
+local.properties
+musickit*.properties*
+app/libs/*.aar
+*.jks
+*.keystore
+captures/
+.venv/
+__pycache__/
