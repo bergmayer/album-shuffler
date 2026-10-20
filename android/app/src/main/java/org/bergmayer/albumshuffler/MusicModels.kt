@@ -5,7 +5,7 @@ import kotlin.random.Random
 
 enum class PlaybackMode(val title: String, val detail: String) {
     SUBSET("Playlist Subset", "Plays only the album tracks that exist in the chosen playlist, in album order."),
-    COMPLETE("Complete Album", "Plays the entire album a random track is from.")
+    COMPLETE("Complete Album", "Opens the entire album in Apple Music. Tap Play there to listen.")
 }
 
 data class Playlist(val id: String, val name: String)
@@ -25,8 +25,8 @@ data class Track(
     val albumKey: String? get() = albumId?.let { "id:$it" }
         ?: album.takeIf { it.isNotBlank() }?.let { "name:${normalized(albumArtist)}|${normalized(it)}" }
 }
-data class Album(val id: String, val title: String, val artist: String, val tracks: List<Track>)
-data class AlbumPick(val key: String, val tracks: List<Track>)
+data class Album(val id: String, val title: String, val artist: String, val tracks: List<Track>, val url: String? = null)
+data class AlbumPick(val key: String, val tracks: List<Track>, val album: Album? = null)
 
 fun normalized(value: String) = value.trim().lowercase(Locale.ROOT)
 val albumOrder = compareBy<Track> { it.disc }.thenBy { it.number ?: Int.MAX_VALUE }
@@ -68,7 +68,7 @@ class AlbumPicker(private val repository: MusicRepository, private val random: R
             val album = try { repository.resolveAlbum(members.first()) } catch (_: AlbumUnavailable) { continue }
             val pick = try {
                 if (mode == PlaybackMode.SUBSET) AlbumPick(sourceKey, matchSubset(members, album.tracks))
-                else AlbumPick(album.id, album.tracks.sortedWith(albumOrder))
+                else AlbumPick(album.id, album.tracks.sortedWith(albumOrder), album)
             } catch (_: AlbumUnavailable) { continue }
             if (pick.tracks.isEmpty()) continue
             if (pick.key !in excluded) return pick

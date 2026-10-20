@@ -207,7 +207,7 @@ private fun ShuffleControls(state: ShufflerState, player: PlayerState, model: Sh
                         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                             Button(onClick = model::shuffle, enabled = state.canShuffle, shape = RoundedCornerShape(12.dp),
                                 contentPadding = PaddingValues(horizontal = 10.dp, vertical = 10.dp), modifier = Modifier.weight(1f).heightIn(min = 54.dp)) {
-                                Text(if (state.shuffling) "Working…" else "Play random album", style = MaterialTheme.typography.labelLarge)
+                                Text(if (state.shuffling) "Working…" else if (state.mode == PlaybackMode.COMPLETE) "Open random album" else "Play random album", style = MaterialTheme.typography.labelLarge)
                             }
                             FilledTonalButton(onClick = model::shuffle, enabled = state.canShuffle && player.track != null,
                                 shape = RoundedCornerShape(12.dp), contentPadding = PaddingValues(horizontal = 10.dp, vertical = 10.dp),
@@ -219,7 +219,7 @@ private fun ShuffleControls(state: ShufflerState, player: PlayerState, model: Sh
                             if (state.shuffling) CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp)
                             else TransportGlyph("play", Modifier.size(18.dp), LocalContentColor.current)
                             Spacer(Modifier.width(10.dp))
-                            Text(if (state.shuffling) "Working…" else "Play random album", style = MaterialTheme.typography.titleMedium)
+                            Text(if (state.shuffling) "Working…" else if (state.mode == PlaybackMode.COMPLETE) "Open random album" else "Play random album", style = MaterialTheme.typography.titleMedium)
                         }
                         FilledTonalButton(onClick = model::shuffle, enabled = state.canShuffle && player.track != null,
                             shape = RoundedCornerShape(12.dp), modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp)) {
@@ -268,33 +268,38 @@ private fun NowPlaying(player: PlayerState, model: ShufflerViewModel, modifier: 
                     if (player.track?.artwork != null) AsyncImage(model = player.track.artwork, contentDescription = null, modifier = Modifier.fillMaxSize())
                 }
                 Column(Modifier.weight(1f)) {
-                    Text(player.track?.title ?: "Nothing playing", style = if (expanded) MaterialTheme.typography.titleLarge else MaterialTheme.typography.titleSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                    Text(player.track?.let { listOf(it.artist, it.album).filter(String::isNotBlank).joinToString(" — ") } ?: "Pick a mode and play",
+                    Text(player.externalAlbum?.title ?: player.track?.title ?: "Nothing playing", style = if (expanded) MaterialTheme.typography.titleLarge else MaterialTheme.typography.titleSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(player.externalAlbum?.artist ?: player.track?.let { listOf(it.artist, it.album).filter(String::isNotBlank).joinToString(" — ") } ?: "Pick a mode and play",
                         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis)
                     if (player.buffering) Text("Loading audio…", style = MaterialTheme.typography.labelSmall)
+                    if (player.externalAlbum != null) Text("Tap Play in Apple Music", style = MaterialTheme.typography.labelSmall)
                 }
                 TextButton(onClick = {
                     try {
-                        val launch = context.packageManager.getLaunchIntentForPackage("com.apple.android.music")
+                        val album = player.externalAlbum
+                        val launch = if (album != null) Intent(Intent.ACTION_VIEW, appleMusicAlbumUrl(album).toUri()).setPackage("com.apple.android.music")
+                            else context.packageManager.getLaunchIntentForPackage("com.apple.android.music")
                         val link = player.track?.url?.toUri()?.takeIf { it.scheme == "https" && it.host == "music.apple.com" }
                         context.startActivity(launch ?: Intent(Intent.ACTION_VIEW, link ?: "https://music.apple.com/".toUri()))
                     } catch (_: ActivityNotFoundException) { openError = true }
                 }, modifier = Modifier.semantics { contentDescription = "Open in Apple Music" }) { Text("Open") }
             }
-            Spacer(Modifier.height(if (expanded) 20.dp else 8.dp))
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(24.dp)) {
-                IconButton(onClick = { model.transport(PlaybackService.PREVIOUS) }, enabled = player.track != null && player.canPrevious,
-                    modifier = Modifier.semantics { contentDescription = "Previous track" }) {
-                    TransportGlyph("previous", Modifier.size(26.dp), LocalContentColor.current)
-                }
-                FilledIconButton(onClick = { model.transport(if (player.playing) PlaybackService.PAUSE else PlaybackService.PLAY) },
-                    enabled = player.track != null && !player.buffering,
-                    modifier = Modifier.size(54.dp).semantics { contentDescription = if (player.playing) "Pause" else "Play" }) {
-                    TransportGlyph(if (player.playing) "pause" else "play", Modifier.size(28.dp), LocalContentColor.current)
-                }
-                IconButton(onClick = { model.transport(PlaybackService.NEXT) }, enabled = player.track != null && player.canNext,
-                    modifier = Modifier.semantics { contentDescription = "Next track" }) {
-                    TransportGlyph("next", Modifier.size(26.dp), LocalContentColor.current)
+            if (player.externalAlbum == null) {
+                Spacer(Modifier.height(if (expanded) 20.dp else 8.dp))
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(24.dp)) {
+                    IconButton(onClick = { model.transport(PlaybackService.PREVIOUS) }, enabled = player.track != null && player.canPrevious,
+                        modifier = Modifier.semantics { contentDescription = "Previous track" }) {
+                        TransportGlyph("previous", Modifier.size(26.dp), LocalContentColor.current)
+                    }
+                    FilledIconButton(onClick = { model.transport(if (player.playing) PlaybackService.PAUSE else PlaybackService.PLAY) },
+                        enabled = player.track != null && !player.buffering,
+                        modifier = Modifier.size(54.dp).semantics { contentDescription = if (player.playing) "Pause" else "Play" }) {
+                        TransportGlyph(if (player.playing) "pause" else "play", Modifier.size(28.dp), LocalContentColor.current)
+                    }
+                    IconButton(onClick = { model.transport(PlaybackService.NEXT) }, enabled = player.track != null && player.canNext,
+                        modifier = Modifier.semantics { contentDescription = "Next track" }) {
+                        TransportGlyph("next", Modifier.size(26.dp), LocalContentColor.current)
+                    }
                 }
             }
         }

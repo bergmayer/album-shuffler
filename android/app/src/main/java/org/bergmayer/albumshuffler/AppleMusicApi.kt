@@ -109,7 +109,7 @@ class AppleMusicRepository(private val api: AppleMusicApi) : MusicRepository {
         val tracks = api.pages("/v1/catalog/${segment(region)}/albums/${segment(albumId)}/tracks?limit=100")
             .filter { it.optString("type") == "songs" }.map(::parseTrack).sortedWith(albumOrder)
         if (tracks.isEmpty() || tracks.any { it.catalogId == null }) throw AlbumUnavailable()
-        val album = Album(albumId, attributes.getString("name"), attributes.optString("artistName"), tracks)
+        val album = Album(albumId, attributes.getString("name"), attributes.optString("artistName"), tracks, attributes.text("url"))
         seed.albumKey?.let { albumCache[it] = album }
         return album
     }

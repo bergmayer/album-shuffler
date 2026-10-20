@@ -3,6 +3,8 @@ package org.bergmayer.albumshuffler
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.content.ActivityNotFoundException
+import androidx.core.net.toUri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CancellationException
@@ -123,10 +125,27 @@ class ShufflerViewModel(application: Application) : AndroidViewModel(application
                 app.credentials.developerToken()
                 val pick = AlbumPicker(app.repository).pick(snapshot.sourceId, snapshot.mode, history.exclusions(), history.lastPlayed())
                 if (version != contextVersion) return@launch
+                if (snapshot.mode == PlaybackMode.COMPLETE) {
+                    val album = pick.album ?: throw AlbumUnavailable()
+                    val link = appleMusicAlbumUrl(album)
+                    try {
+                        app.startActivity(Intent(Intent.ACTION_VIEW, link.toUri())
+                            .setPackage("com.apple.android.music").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                    } catch (_: ActivityNotFoundException) {
+                        throw MusicFailure("Install Apple Music to open this album.")
+                    }
+                    // Stop any subset player before it can compete with Apple Music.
+                    app.stopService(Intent(app, PlaybackService::class.java))
+                    app.playerState.value = PlayerState(track = pick.tracks.first(), externalAlbum = album)
+                    // This is a successful handoff, not confirmation that playback began.
+                    history.record(pick.key)
+                    mutableState.update { it.copy(shuffling = false) }
+                    return@launch
+                }
                 val requestId = UUID.randomUUID().toString()
                 pendingPick = Triple(requestId, pick.key, version)
                 app.pendingQueue = PendingQueue(requestId, pick.tracks)
-                app.playerState.update { it.copy(error = null) }
+                app.playerState.update { PlayerState() }
                 PlaybackService.send(app, PlaybackService.PREPARE)
             } catch (e: CancellationException) { throw e }
             catch (e: Exception) {
@@ -176,6 +195,7 @@ class ShufflerViewModel(application: Application) : AndroidViewModel(application
     }
 
     fun transport(action: String) {
+        if (app.playerState.value.externalAlbum != null) return
         try { PlaybackService.send(app, action) } catch (e: Exception) { report(e) }
     }
     fun dismissError() {

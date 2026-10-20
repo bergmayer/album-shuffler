@@ -48,7 +48,7 @@ class LayoutAndSdkTest {
 
     @Test fun phoneLandscapeKeepsPlayAndTransportVisible() {
         show(840, 400)
-        compose.onNodeWithText("Play random album").assertIsDisplayed()
+        compose.onNodeWithText("Open random album").assertIsDisplayed()
         compose.onNodeWithContentDescription("Pause").assertIsDisplayed()
         compose.onNodeWithText("Playlist Subset").assertIsDisplayed()
         compose.onNodeWithText("Complete Album").assertIsDisplayed()
@@ -64,14 +64,14 @@ class LayoutAndSdkTest {
         show(1100, 760, dark = true)
         compose.onNodeWithText("Playlist Subset").assertIsDisplayed()
         compose.onNodeWithText("Complete Album").assertIsDisplayed()
-        compose.onNodeWithText("Play random album").assertIsDisplayed()
+        compose.onNodeWithText("Open random album").assertIsDisplayed()
         compose.onNodeWithContentDescription("Next track").assertIsDisplayed()
         screenshot("tablet-landscape-dark")
     }
 
     @Test fun portraitHasFooterAndVisibleActions() {
         show(400, 840)
-        compose.onNodeWithText("Play random album").assertIsDisplayed()
+        compose.onNodeWithText("Open random album").assertIsDisplayed()
         compose.onNodeWithContentDescription("Pause").assertIsDisplayed()
         val controls = compose.onNodeWithTag("shuffle-controls").fetchSemanticsNode().boundsInRoot
         val player = compose.onNodeWithTag("now-playing").fetchSemanticsNode().boundsInRoot
@@ -81,9 +81,25 @@ class LayoutAndSdkTest {
 
     @Test fun enlargedTextKeepsPrimaryActionsAccessible() {
         show(840, 480, fontScale = 1.5f)
-        compose.onNodeWithText("Play random album").assertIsDisplayed()
+        compose.onNodeWithText("Open random album").assertIsDisplayed()
         compose.onNodeWithContentDescription("Pause").performScrollTo().assertIsDisplayed()
         screenshot("landscape-large-text")
+    }
+
+    @Test fun externalAlbumShowsHandoffWithoutTransportControls() {
+        val app = compose.activity.application as ShufflerApplication
+        val model = ShufflerViewModel(app)
+        val album = Album("123", "Selected album", "Artist", listOf(sample), "https://music.apple.com/us/album/title/123")
+        compose.setContent {
+            MaterialTheme {
+                ShufflerScreen(ShufflerState(connected = true), PlayerState(track = sample, externalAlbum = album), model, WindowInsets(0, 0, 0, 0)) {}
+            }
+        }
+        compose.onNodeWithText("Selected album").assertIsDisplayed()
+        compose.onNodeWithText("Tap Play in Apple Music").assertIsDisplayed()
+        compose.onNodeWithContentDescription("Pause").assertDoesNotExist()
+        compose.onNodeWithContentDescription("Play").assertDoesNotExist()
+        compose.onNodeWithContentDescription("Open in Apple Music").assertIsDisplayed()
     }
 
     @Test fun nativeMusicKitCanInitializeAndReleaseOnDevice() {

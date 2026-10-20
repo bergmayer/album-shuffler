@@ -6,10 +6,10 @@ Native Kotlin / Jetpack Compose companion to the Apple app. Requires Android 8.0
 
 - Entire Library or an Apple Music library playlist as the source, with complete pagination.
 - **Playlist Subset:** picks an album and queues only its playlist tracks, in disc/track order. Catalog matching cannot silently add or drop playlist tracks.
-- **Complete Album:** resolves an album in the Apple Music catalog and plays its complete song sequence, including songs absent from the library or playlist.
-- **Play random album** and **Choose another**, avoiding repeats while alternatives remain. Failed playback is not recorded as a successful pick.
-- Saved source and mode, a refresh action, artwork and track metadata, previous/play/pause/next, and an Apple Music shortcut.
-- Foreground playback service, media notification and lock-screen/headset controls, audio focus, and pause when headphones disconnect.
+- **Complete Album:** resolves an album in the Apple Music catalog and opens that exact album in the Apple Music app. Tap Play there; Apple Music owns playback and listening history.
+- **Open random album** (Complete Album), **Play random album** (Playlist Subset), and **Choose another**, avoiding repeats while alternatives remain. Failed launches/playback are not recorded as successful picks. An album opened externally counts as a pick; the app cannot confirm whether you played it.
+- Saved source and mode, a refresh action, artwork and metadata, and an Apple Music shortcut. Playlist Subset also provides previous/play/pause/next controls.
+- For Playlist Subset: foreground playback service, media notification and lock-screen/headset controls, audio focus, and pause when headphones disconnect. Complete Album uses Apple Music’s controls.
 - Separate portrait and landscape layouts, light/dark appearance, scrolling for large text, and accessible control labels.
 - `albumshuffler://shuffle` opens the saved source/mode and starts a pick after initialization.
 
@@ -69,7 +69,9 @@ The reported workaround is to press Back, sign out inside Apple Music, then retu
 
 ## Android platform differences
 
-Apple's Android SDK starts an independent player inside Album Shuffler. It does not adopt or control the Apple Music app's existing queue as `SystemMusicPlayer` does on iOS. Opening Apple Music is a shortcut to that app or the catalog track.
+Complete Album sends the catalog album URL directly to the installed Apple Music app, with no embedded-player or browser fallback. Playback controls live in Apple Music; Album Shuffler shows the selected album without claiming it is playing. Apple does not expose a system-player controller in its Android SDK, so automatic playback and Recently Played updates must be verified on a signed-in device. Opening an album alone does not record a play.
+
+Playlist Subset uses MusicKit's independent player inside Album Shuffler to preserve the exact subset and album order. That mode does not control Apple Music's queue and cannot guarantee an album entry in Recently Played.
 
 The published Android SDK accepts catalog identifiers for playback. Local-only/uploaded songs without a matching playable catalog version cannot be queued. An unavailable album is skipped; an unavailable subset is never silently broadened or partially queued. If no eligible album remains, the app explains the limitation.
 

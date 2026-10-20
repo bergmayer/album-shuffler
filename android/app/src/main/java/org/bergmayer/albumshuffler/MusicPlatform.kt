@@ -12,6 +12,7 @@ data class PlayerState(
     val error: String? = null,
     val startedRequest: String? = null,
     val stopped: Boolean = false,
+    val externalAlbum: Album? = null,
 )
 
 interface MusicPlatform {

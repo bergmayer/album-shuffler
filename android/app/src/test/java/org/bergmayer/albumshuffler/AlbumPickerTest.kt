@@ -48,8 +48,11 @@ class AlbumPickerTest {
     }
     @Test fun completeIncludesSongsMissingFromPlaylist() = runTest {
         val first = song("first"); val second = song("second", number = 2)
-        val repository = Repository(listOf(second), listOf(Album("catalog", "A", "Artist", listOf(second, first))))
-        assertEquals(listOf(first, second), AlbumPicker(repository).pick("playlist", PlaybackMode.COMPLETE, emptySet(), null).tracks)
+        val album = Album("catalog", "A", "Artist", listOf(second, first), "https://music.apple.com/us/album/a/catalog")
+        val repository = Repository(listOf(second), listOf(album))
+        val pick = AlbumPicker(repository).pick("playlist", PlaybackMode.COMPLETE, emptySet(), null)
+        assertEquals(listOf(first, second), pick.tracks)
+        assertEquals(album, pick.album)
     }
     @Test fun doesNotRepeatWhileAnotherAlbumExists() = runTest {
         val picker = AlbumPicker(repo(song("a", "A"), song("b", "B")), Random(1))

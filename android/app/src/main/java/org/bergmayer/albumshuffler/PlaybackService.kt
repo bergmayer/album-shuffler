@@ -111,6 +111,7 @@ class PlaybackService : Service() {
     }
 
     private fun onPlayerState(state: PlayerState) {
+        if (app.playerState.value.externalAlbum != null) return
         app.playerState.value = state
         if (state.error != null) { timeout?.cancel(); stopSelf(); return }
         if (state.startedRequest != null) timeout?.cancel()
@@ -155,7 +156,7 @@ class PlaybackService : Service() {
         unregisterReceiver(noisy)
         mediaSession.release()
         scope.cancel()
-        app.playerState.update { PlayerState(error = it.error ?: if (it.buffering) "Playback was stopped before the album started. Try again." else null) }
+        app.playerState.update { if (it.externalAlbum != null) it else PlayerState(error = it.error ?: if (it.buffering) "Playback was stopped before the album started. Try again." else null) }
         getSystemService(NotificationManager::class.java).cancel(NOTIFICATION)
         super.onDestroy()
     }
