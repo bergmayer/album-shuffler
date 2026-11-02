@@ -13,6 +13,34 @@ class AppleMusicApiTest {
     private val api = AppleMusicApi(credentials = { "developer-test" to "user-test" }, origin = server.url("/"))
     @After fun close() = server.shutdown()
 
+    @Test fun albumDetailsAndTracksLoadTogether() = kotlinx.coroutines.runBlocking {
+        val reads = java.util.concurrent.CountDownLatch(2)
+        server.dispatcher = object : okhttp3.mockwebserver.Dispatcher() {
+            override fun dispatch(request: okhttp3.mockwebserver.RecordedRequest): MockResponse {
+                val path = request.requestUrl!!.encodedPath
+                val body = when (path) {
+                    "/v1/me/storefront" -> """{"data":[{"id":"us"}]}"""
+                    "/v1/catalog/us/songs/song" -> """{"data":[{"relationships":{"albums":{"data":[{"id":"album"}]}}}]}"""
+                    "/v1/catalog/us/albums/album" -> {
+                        reads.countDown()
+                        check(reads.await(3, java.util.concurrent.TimeUnit.SECONDS)) { "Tracks did not start with album metadata" }
+                        """{"data":[{"id":"album","attributes":{"name":"Fixture","artistName":"Artist"}}]}"""
+                    }
+                    "/v1/catalog/us/albums/album/tracks" -> {
+                        reads.countDown()
+                        check(reads.await(3, java.util.concurrent.TimeUnit.SECONDS)) { "Album metadata did not start with tracks" }
+                        """{"data":[{"id":"song","type":"songs","attributes":{"name":"Track","artistName":"Artist","albumName":"Fixture","trackNumber":1}}]}"""
+                    }
+                    else -> error("Unexpected path: $path")
+                }
+                return MockResponse().setBody(body)
+            }
+        }
+        val album = AppleMusicRepository(api).resolveAlbum(Track(id="library",catalogId="song",title="Track",artist="Artist",album="Fixture"))
+        assertEquals("Fixture",album.title)
+        assertEquals(listOf("song"),album.tracks.map { it.catalogId })
+    }
+
     @Test fun followsEveryPageAndSendsBothTokens() = runTest {
         server.enqueue(MockResponse().setBody("""{"data":[{"id":"one"}],"next":"/v1/me/library/songs?offset=100"}"""))
         server.enqueue(MockResponse().setBody("""{"data":[{"id":"two"}]}"""))

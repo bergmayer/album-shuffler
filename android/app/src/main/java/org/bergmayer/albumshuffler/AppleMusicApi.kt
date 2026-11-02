@@ -1,6 +1,8 @@
 package org.bergmayer.albumshuffler
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl
@@ -103,11 +105,14 @@ class AppleMusicRepository(private val api: AppleMusicApi) : MusicRepository {
             }
         } catch (_: AlbumUnavailable) { null }
         val albumId = mappedAlbum ?: searchAlbum(seed, region)
-        val albumData = api.get("/v1/catalog/${segment(region)}/albums/${segment(albumId)}")
-            .getJSONArray("data").optJSONObject(0) ?: throw AlbumUnavailable()
+        val (albumResponse, trackResponse) = coroutineScope {
+            val album = async { api.get("/v1/catalog/${segment(region)}/albums/${segment(albumId)}") }
+            val tracks = async { api.pages("/v1/catalog/${segment(region)}/albums/${segment(albumId)}/tracks?limit=100") }
+            album.await() to tracks.await()
+        }
+        val albumData = albumResponse.getJSONArray("data").optJSONObject(0) ?: throw AlbumUnavailable()
         val attributes = albumData.getJSONObject("attributes")
-        val tracks = api.pages("/v1/catalog/${segment(region)}/albums/${segment(albumId)}/tracks?limit=100")
-            .filter { it.optString("type") == "songs" }.map(::parseTrack).sortedWith(albumOrder)
+        val tracks = trackResponse.filter { it.optString("type") == "songs" }.map(::parseTrack).sortedWith(albumOrder)
         if (tracks.isEmpty() || tracks.any { it.catalogId == null }) throw AlbumUnavailable()
         val album = Album(albumId, attributes.getString("name"), attributes.optString("artistName"), tracks, attributes.text("url"))
         seed.albumKey?.let { albumCache[it] = album }

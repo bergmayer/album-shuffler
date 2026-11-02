@@ -16,7 +16,6 @@
 		2A0001000000000000000007 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000007 /* ContentView.swift */; };
 		2A0001000000000000000008 /* NowPlayingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000008 /* NowPlayingFooter.swift */; };
 		2A0001000000000000000009 /* ShuffleControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000009 /* ShuffleControlsView.swift */; };
-		2A000100000000000000000A /* ShuffleIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000A /* ShuffleIntent.swift */; };
 		2A000100000000000000000B /* AlbumShufflerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000100000000000000000B /* AlbumShufflerWidget.swift */; };
 		2A0001000000000000000020 /* AlbumShufflerWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000021 /* AlbumShufflerWidget.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A0001000000000000000031 /* AlbumShufflerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0001000000000000000001 /* AlbumShufflerApp.swift */; };
@@ -111,7 +110,6 @@
 		1A0001000000000000000007 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A0001000000000000000008 /* NowPlayingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFooter.swift; sourceTree = "<group>"; };
 		1A0001000000000000000009 /* ShuffleControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleControlsView.swift; sourceTree = "<group>"; };
-		1A000100000000000000000A /* ShuffleIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleIntent.swift; sourceTree = "<group>"; };
 		1A000100000000000000000B /* AlbumShufflerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumShufflerWidget.swift; sourceTree = "<group>"; };
 		1A0001000000000000000010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A0001000000000000000011 /* AlbumShuffler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlbumShuffler.entitlements; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 		3A0001000000000000000007 /* AlbumShufflerWidget */ = {
 			isa = PBXGroup;
 			children = (
-				1A000100000000000000000A /* ShuffleIntent.swift */,
 				1A000100000000000000000B /* AlbumShufflerWidget.swift */,
 				1A0001000000000000000041 /* Assets.xcassets */,
 				1A0001000000000000000012 /* Info.plist */,
@@ -504,7 +501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A000100000000000000000A /* ShuffleIntent.swift in Sources */,
 				2A000100000000000000000B /* AlbumShufflerWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
